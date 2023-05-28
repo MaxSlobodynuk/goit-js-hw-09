@@ -14,8 +14,8 @@ function createPromise(position, delay) {
   }, delay)});}
     
 
-form.addEventListener('submit', (ev) => { 
-  ev.preventDefault();
+form.addEventListener('submit', (evt) => { 
+  evt.preventDefault();
   
   const delayI = document.querySelector('.form input[name = "delay"]');
   const stepI = document.querySelector('.form input[name = "step"]');
@@ -34,6 +34,5 @@ form.addEventListener('submit', (ev) => {
     .catch(({ position, delay }) => {
       Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
     });}
-    ev.currentTarget.reset();}
-    
-  )
+    evt.currentTarget.reset();
+  })
